@@ -1,0 +1,12 @@
+<%= form_for @admin_parking, url: admin_checkout_path, method: "put" do |f| %>
+  <div class="form-group">
+    <%= f.hidden_field :vehicle_id, value: @admin_parking.vehicle_id%>
+  </div>
+  <div class="form-group">
+    <%= f.hidden_field :vehicle_type_id, value: @admin_parking.vehicle_type_id %>
+  </div>
+  <div class="form-group">
+    <%= f.hidden_field :parking_lot_id, value: @admin_parking.parking_lot_id%>
+  </div>
+  <%= f.submit "Checkout Vehicle", class: "btn btn-primary" %>
+<% end %>

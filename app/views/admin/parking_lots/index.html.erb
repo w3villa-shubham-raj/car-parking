@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Parking lots</h1>
+
+<div id="admin_parking_lots">
+  <% @admin_parking_lots.each do |admin_parking_lot| %>
+    <%= render admin_parking_lot %>
+    <p>
+      <%= link_to "Show this parking lot", admin_parking_lot %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New parking lot", new_admin_parking_lot_path %>

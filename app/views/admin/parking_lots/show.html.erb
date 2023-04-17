@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @admin_parking_lot %>
+
+<div>
+  <%= link_to "Edit this parking lot", edit_admin_parking_lot_path(@admin_parking_lot) %> |
+  <%= link_to "Back to parking lots", admin_parking_lots_path %>
+
+  <%= button_to "Destroy this parking lot", @admin_parking_lot, method: :delete %>
+</div>

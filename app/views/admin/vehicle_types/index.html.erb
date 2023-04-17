@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Vehicle types</h1>
+
+<div id="admin_vehicle_types">
+  <% @admin_vehicle_types.each do |admin_vehicle_type| %>
+    <%= render admin_vehicle_type %>
+    <p>
+      <%= link_to "Show this vehicle type", admin_vehicle_type %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New vehicle type", new_admin_vehicle_type_path %>

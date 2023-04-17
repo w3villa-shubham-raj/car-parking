@@ -1,0 +1,31 @@
+
+<p class="alert alert-success"><%= notice %></p>
+
+<h1>Parkings</h1>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Vehicle Number</th>
+        <th>Vehicle Type</th>
+        <th> Parking Lot </th>
+      </tr>
+    </thead>
+    <tbody>
+    <%= count = 0 %>
+      <% @admin_parkings.each do |admin_parking| %>
+        <tr>
+          <td><%= admin_parking.id %></td>
+          <td><%= vehicle_type_name(admin_parking.vehicle_type_id) %></td>
+          <td><%= parking_lot_name(admin_parking.parking_lot_id)%></td>
+          <%# <td><%= count = count + Admin::VehicleType.find_by_id(parking.vehicle_type_id).required_space %>
+          <td><%= link_to "Show", admin_parking, class: "btn btn-primary" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "New parking", new_admin_parking_path, class: "btn btn-success" %>
+
