@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-Admin::ParkingLot.create(name:"MyParking1", bike_spot: 23, compact_spot:10, regular_spot:10, large_spot: 3)
-Admin::VehicleType.create(name:"bike",required_space:1)
-Admin::VehicleType.create(name:"compact",required_space:2)
-Admin::VehicleType.create(name:"regular",required_space:3)
-Admin::VehicleType.create(name:"large",required_space:9)
+Admin::ParkingLot.find_or_create_by(name:"MyParking1", bike_spot: 23, compact_spot:10, regular_spot:10, large_spot: 3)
+Admin::VehicleType.find_or_create_by(name:"bike",required_space:1)
+Admin::VehicleType.find_or_create_by(name:"compact",required_space:2)
+Admin::VehicleType.find_or_create_by(name:"regular",required_space:3)
+Admin::VehicleType.find_or_create_by(name:"large",required_space:9)
 
 # Admin::Parking.create(vehicle_id: 1, vehicle_type_id: 1, parking_lot_id: 1)
 # Admin::Parking.create(vehicle_id: 2, vehicle_type_id: 1, parking_lot_id: 1)
