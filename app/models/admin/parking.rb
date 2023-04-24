@@ -3,7 +3,7 @@ class Admin::Parking < ApplicationRecord
   belongs_to :vehicle_type
   belongs_to :parking_lot
 
-   validates_presence_of :vehicle_type_id, :parking_lot_id
+  validates_presence_of :vehicle_type_id, :parking_lot_id
   validate :available_spots, on: :create
 
   before_create :update_record
@@ -17,11 +17,9 @@ class Admin::Parking < ApplicationRecord
   end
 
   def update_record
-    # Retrieve the associated vehicle type and parking lot
     vehicle_type = VehicleType.find_by_id(self.vehicle_type_id)
     parking_lot = ParkingLot.find_by_id(self.parking_lot_id)
 
-    # Check that the vehicle type and parking lot exist in the database
     if vehicle_type.nil?
       errors.add(:base, "Vehicle type with ID #{self.vehicle_type_id} not found")
     end

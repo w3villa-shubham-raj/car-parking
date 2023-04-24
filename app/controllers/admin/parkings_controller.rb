@@ -52,7 +52,6 @@ end
 
   def create
     @admin_parking = Admin::Parking.new(admin_parking_params)
-binding.pry
     respond_to do |format|
       if @admin_parking.save
         format.html { redirect_to admin_parking_url(@admin_parking), notice: "Parking was successfully created." }

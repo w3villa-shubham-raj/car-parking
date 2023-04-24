@@ -10,6 +10,8 @@
         <th>Vehicle Number</th>
         <th>Vehicle Type</th>
         <th> Parking Lot </th>
+         <th>Action</th>
+
       </tr>
     </thead>
     <tbody>
@@ -19,7 +21,6 @@
           <td><%= parking.id %></td>
           <td><%= vehicle_type_name(parking.vehicle_type_id) %></td>
           <td><%= parking_lot_name(parking.parking_lot_id)%></td>
-          <%# <td><%= count = count + Admin::VehicleType.find_by_id(parking.vehicle_type_id).required_space %>
           <td><%= link_to "Show", parking, class: "btn btn-primary" %></td>
         </tr>
       <% end %>

@@ -9,18 +9,39 @@
       <li class="nav-item active">
         <a class="nav-link" href="/parkings">Home <span class="sr-only">(current)</span></a>
       </li>
-     
       <% if user_signed_in? %>
         <li class="nav-item">
           <%= button_to 'Logout',destroy_user_session_path,method: :delete, class: 'btn btn-lg btn-danger' %> 
         </li>
-        <li class="nav-item">
-          <%= link_to 'Parking',new_parking_path, class: 'nav-link' %> 
-        </li>
       <% else %>
         <li class="nav-item">
-                <%= link_to "Sign In", new_user_session_path, class: "nav-link" %> 
-            </li>
+          <%= link_to "Sign In", new_user_session_path, class: "nav-link" %> 
+        </li>
       <% end %>
+      <% if current_user&.isAdmin %>
+      <li class="nav-item">
+          <%= link_to "show parking lot", admin_parking_lots_path, class: "nav-link" %> 
+      </li>
+       <li class="nav-item">
+          <%= link_to "parking lot", new_admin_parking_lot_path, class: "nav-link" %> 
+      </li>
+       <li class="nav-item">
+          <%= link_to "parking", new_admin_parking_path, class: "nav-link" %> 
+      </li>
+       <li class="nav-item">
+          <%= link_to "Vehicle Type", new_admin_vehicle_type_path, class: "nav-link" %> 
+      </li>
+      <% else %>
+         <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Sign out", destroy_user_session_path, class: "nav-link" %> 
+          </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Sign In", new_user_session_path, class: "nav-link" %> 
+            </li>
+          <% end %>
+      <% end %>
+      </ul>
   </div>
 </nav>

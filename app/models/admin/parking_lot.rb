@@ -8,7 +8,6 @@ class Admin::ParkingLot < ApplicationRecord
     
    
 def available_spots?(vehicle_type)
-  binding.pry
     case vehicle_type
     when "regular"
       regular_spot > 0
